@@ -1,49 +1,14 @@
-"use server";
+import type { Game } from "./odds-api";
 
-import { fetchUpcomingGames, fetchGameById, type Game } from "@/lib/odds-api";
-import { generateFallbackInsight } from "@/lib/insight-utils";
-
-export async function getUpcomingGames(
-  sport = "baseball_mlb"
-): Promise<Game[]> {
-  return fetchUpcomingGames(sport);
-}
-
-export async function getGameById(id: string): Promise<Game | null> {
-  return fetchGameById(id);
-}
-
-export async function generateAiInsight(game: Game): Promise<string> {
-  try {
-    // Use absolute URL for API endpoint
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : "http://localhost:3000";
-
-    const response = await fetch(`${baseUrl}/api/openai`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ game }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`API request failed with status ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data.insight;
-  } catch (error) {
-    console.error("Error generating AI insight:", error);
-
-    // Fallback insight if API call fails
-    return generateFallbackInsight(game);
-  }
-}
-
-// Fallback function for when API call fails
-function generateFallbackInsight(game: Game): string {
+/**
+ * Generates a fallback insight when the OpenAI API call fails
+ * This function provides a deterministic response based on game data
+ * that can be used in production or development environments
+ *
+ * @param game The game object containing team and probability data
+ * @returns A string containing the generated insight
+ */
+export function generateFallbackInsight(game: Game): string {
   const homeTeamCode = game.homeTeam.code;
   const awayTeamCode = game.awayTeam.code;
   const homeWinProb = game.homeWinProbability;

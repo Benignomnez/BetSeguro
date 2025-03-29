@@ -22,11 +22,7 @@ export function useLanguage() {
   return context;
 }
 
-export default function LanguageProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("en");
 
   // Load saved language preference from localStorage when component mounts

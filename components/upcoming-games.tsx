@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { getUpcomingGames } from "@/app/actions";
+import { fetchClientUpcomingGames } from "@/lib/client-api";
 import type { Game } from "@/lib/odds-api";
 import { Skeleton } from "@/components/ui/skeleton";
 import SportsSelector from "./sports-selector";
@@ -22,7 +22,7 @@ export default function UpcomingGames() {
       try {
         setLoading(true);
         const sportParam = selectedSport === "all" ? undefined : selectedSport;
-        const data = await getUpcomingGames(sportParam);
+        const data = await fetchClientUpcomingGames(sportParam);
         setGames(data);
         setError(null);
       } catch (err) {

@@ -1,33 +1,32 @@
 /**
- * Validates that all required environment variables are present.
- * For use during app startup to catch configuration issues early.
+ * This utility checks that all required environment variables are present
+ * It should be run at startup to catch missing configuration early
  */
-export function validateEnvVars() {
-  const requiredVars = ["ODDS_API_KEY", "OPENAI_API_KEY"];
 
-  const missingVars = requiredVars.filter((varName) => !process.env[varName]);
+// List of required environment variables
+const requiredEnvVars = [
+  "ODDS_API_KEY",
+  // OpenAI is optional if we're using fallbacks
+  // 'OPENAI_API_KEY',
+];
+
+// Check all environment variables
+export function validateEnvVars(): void {
+  const missingVars = requiredEnvVars.filter((envVar) => !process.env[envVar]);
 
   if (missingVars.length > 0) {
     throw new Error(
-      `Missing required environment variables: ${missingVars.join(", ")}. ` +
-        `Please check your .env file.`
+      `Missing required environment variables: ${missingVars.join(", ")}`
     );
   }
+}
 
-  // Optional check for valid ODDS_API_KEY and OPENAI_API_KEY formats
-  const oddsApiKey = process.env.ODDS_API_KEY;
-  if (oddsApiKey && oddsApiKey === "your_odds_api_key") {
-    console.warn(
-      "WARNING: You appear to be using a placeholder ODDS_API_KEY value"
-    );
-  }
+// Check if AI insights are enabled via environment variable
+export function isAiInsightsEnabled(): boolean {
+  return process.env.NEXT_PUBLIC_ENABLE_AI_INSIGHTS === "true";
+}
 
-  const openaiKey = process.env.OPENAI_API_KEY;
-  if (openaiKey && openaiKey === "your_openai_api_key") {
-    console.warn(
-      "WARNING: You appear to be using a placeholder OPENAI_API_KEY value"
-    );
-  }
-
-  return true;
+// Check if we can make API calls to OpenAI
+export function canUseOpenAI(): boolean {
+  return Boolean(process.env.OPENAI_API_KEY) && isAiInsightsEnabled();
 }

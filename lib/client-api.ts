@@ -1,26 +1,37 @@
-"use server";
+import { Game } from "./odds-api";
 
-import { fetchUpcomingGames, fetchGameById, type Game } from "@/lib/odds-api";
-import { generateFallbackInsight } from "@/lib/insight-utils";
+// Client-side wrappers for server actions
+export async function fetchClientGameById(id: string): Promise<Game | null> {
+  try {
+    const response = await fetch(`/api/games/${id}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch game: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching game by ID:", error);
+    return null;
+  }
+}
 
-export async function getUpcomingGames(
+export async function fetchClientUpcomingGames(
   sport = "baseball_mlb"
 ): Promise<Game[]> {
-  return fetchUpcomingGames(sport);
-}
-
-export async function getGameById(id: string): Promise<Game | null> {
-  return fetchGameById(id);
-}
-
-export async function generateAiInsight(game: Game): Promise<string> {
   try {
-    // Use absolute URL for API endpoint
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : "http://localhost:3000";
+    const response = await fetch(`/api/games?sport=${sport}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch games: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching upcoming games:", error);
+    return [];
+  }
+}
 
-    const response = await fetch(`${baseUrl}/api/openai`, {
+export async function generateClientAiInsight(game: Game): Promise<string> {
+  try {
+    const response = await fetch("/api/insight", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -29,15 +40,13 @@ export async function generateAiInsight(game: Game): Promise<string> {
     });
 
     if (!response.ok) {
-      throw new Error(`API request failed with status ${response.status}`);
+      throw new Error(`Failed to generate insight: ${response.status}`);
     }
 
     const data = await response.json();
     return data.insight;
   } catch (error) {
     console.error("Error generating AI insight:", error);
-
-    // Fallback insight if API call fails
     return generateFallbackInsight(game);
   }
 }

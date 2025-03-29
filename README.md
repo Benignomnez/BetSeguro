@@ -1,55 +1,110 @@
-# BetSeguro
+# BetSeguro: AI-Powered Sports Predictions Platform
 
-BetSeguro is an AI-powered sports prediction platform that helps users make data-driven betting decisions with high accuracy. The application provides real-time predictions for MLB and NBA games, with detailed analysis and insights.
+BetSeguro is a modern web application that provides AI-powered predictions for sports betting, focusing on Baseball, Basketball, and Hockey.
 
 ## Features
 
-- **AI-Powered Predictions**: Advanced machine learning models analyze thousands of data points to predict game outcomes
-- **Multilingual Support**: Toggle between English and Spanish interfaces
-- **Real-time Updates**: Data refreshes every 5 minutes with the latest odds and statistics
-- **Detailed Game Analysis**: Comprehensive breakdown of matchups with win probabilities
-- **Team Statistics**: Access detailed team performance metrics to inform betting decisions
-- **Responsive Design**: Optimized for both mobile and desktop viewing
+- Real-time odds data from [The Odds API](https://the-odds-api.com/)
+- AI-powered insights and analysis for upcoming games
+- Responsive, mobile-friendly design
+- Multi-language support (English and Spanish)
+- Detailed game predictions with win probabilities and risk assessment
 
 ## Tech Stack
 
-- **Frontend**: Next.js 15, React 19, TypeScript
-- **Styling**: Tailwind CSS, Shadcn UI components
-- **Data Fetching**: The Odds API integration
-- **State Management**: React Context API
-- **Deployment**: Vercel
+- [Next.js 15](https://nextjs.org/) - React framework
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Shadcn UI](https://ui.shadcn.com/) - UI component library
+- [OpenAI API](https://openai.com/) (optional) - AI-powered insights
+
+## Prerequisites
+
+- Node.js 18.17 or later
+- An API key from [The Odds API](https://the-odds-api.com/) (required)
+- An API key from [OpenAI](https://openai.com/) (optional, for AI insights)
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 18.17 or later
-- pnpm (recommended) or npm/yarn
-
-### Installation
-
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/Benignomnez/BetSeguro.git
-   cd BetSeguro
-   ```
+
+```bash
+git clone https://github.com/yourusername/betseguro.git
+cd betseguro
+```
 
 2. Install dependencies:
-   ```bash
-   pnpm install
-   ```
 
-3. Create a `.env.local` file in the root directory with your API key:
-   ```
-   ODDS_API_KEY=your_api_key_here
-   ```
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
 
-4. Start the development server:
-   ```bash
-   pnpm dev
-   ```
+3. Copy the example environment file and configure your environment variables:
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+```bash
+cp .env.example .env.local
+```
+
+4. Edit `.env.local` and add your API keys:
+
+```
+ODDS_API_KEY=your_odds_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here  # Optional
+NEXT_PUBLIC_ENABLE_AI_INSIGHTS=true      # Set to false to save on OpenAI costs
+```
+
+5. Start the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+
+6. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+## Deployment
+
+### Deploy to Vercel
+
+The easiest way to deploy BetSeguro is using [Vercel](https://vercel.com/), the platform built by the creators of Next.js.
+
+1. Create a Vercel account if you don't have one
+2. Install the Vercel CLI: `npm i -g vercel`
+3. Run `vercel` from the project directory to deploy
+4. Set up your environment variables in the Vercel dashboard:
+   - `ODDS_API_KEY` (required)
+   - `OPENAI_API_KEY` (optional)
+   - `NEXT_PUBLIC_ENABLE_AI_INSIGHTS` (set to `true` or `false`)
+
+### Alternative Deployment Options
+
+BetSeguro can also be deployed to any platform that supports Next.js applications:
+
+- [Netlify](https://www.netlify.com/)
+- [AWS Amplify](https://aws.amazon.com/amplify/)
+- [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform)
+- [Railway](https://railway.app/)
+
+## Production Considerations
+
+- **API Keys**: Ensure your API keys are properly set as environment variables
+- **AI Insights**: Set `NEXT_PUBLIC_ENABLE_AI_INSIGHTS=false` if you want to save on OpenAI API costs
+- **Performance**: The application uses static fallbacks when OpenAI is unavailable
+
+## License
+
+[MIT](LICENSE)
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
 ## Project Structure
 
@@ -64,20 +119,6 @@ BetSeguro is an AI-powered sports prediction platform that helps users make data
   /translations.ts # Multilingual text content
 /public            # Static assets like images
 ```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 

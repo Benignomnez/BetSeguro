@@ -20,6 +20,10 @@ export const translations = {
       en: "Sign In To Subscribe",
       es: "Iniciar Sesión para Suscribirse",
     },
+    howItWorks: {
+      en: "How It Works",
+      es: "Cómo Funciona",
+    },
   },
 
   // Hero Section
@@ -224,6 +228,564 @@ export const translations = {
       cookies: {
         en: "Cookies",
         es: "Cookies",
+      },
+    },
+  },
+
+  // How It Works Page
+  howItWorks: {
+    title: {
+      en: "How BetSeguro's AI Prediction System Works",
+      es: "Cómo Funciona el Sistema de Predicción de IA de BetSeguro",
+    },
+    subtitle: {
+      en: "Our advanced AI-powered platform combines real-time data, machine learning, and sports analytics to deliver highly accurate betting predictions.",
+      es: "Nuestra plataforma avanzada impulsada por IA combina datos en tiempo real, aprendizaje automático y análisis deportivos para ofrecer predicciones de apuestas altamente precisas.",
+    },
+    backToHome: {
+      en: "Back to home",
+      es: "Volver al inicio",
+    },
+    steps: {
+      step1: {
+        title: {
+          en: "1. Real-Time Data Collection",
+          es: "1. Recopilación de Datos en Tiempo Real",
+        },
+        description: {
+          en: "We integrate with The Odds API to gather up-to-the-minute betting odds from various bookmakers. Our system continuously monitors odds changes across multiple sports leagues including MLB, NBA, and NHL.",
+          es: "Nos integramos con The Odds API para recopilar las cuotas de apuestas más actualizadas de varios corredores de apuestas. Nuestro sistema monitorea continuamente los cambios en las cuotas en múltiples ligas deportivas, incluyendo MLB, NBA y NHL.",
+        },
+        features: {
+          feature1: {
+            en: "Live odds from multiple bookmakers",
+            es: "Cuotas en vivo de múltiples casas de apuestas",
+          },
+          feature2: {
+            en: "Team performance metrics",
+            es: "Métricas de rendimiento del equipo",
+          },
+          feature3: {
+            en: "Automatic refreshing every 5 minutes",
+            es: "Actualización automática cada 5 minutos",
+          },
+        },
+      },
+      step2: {
+        title: {
+          en: "2. AI-Powered Analysis",
+          es: "2. Análisis Impulsado por IA",
+        },
+        description: {
+          en: "Our proprietary algorithms convert betting odds into win probabilities, analyze the data for patterns, and generate predictions. We use OpenAI's GPT models to generate detailed insights and analysis for each matchup.",
+          es: "Nuestros algoritmos propietarios convierten las cuotas de apuestas en probabilidades de victoria, analizan los datos en busca de patrones y generan predicciones. Utilizamos los modelos GPT de OpenAI para generar análisis e insights detallados para cada enfrentamiento.",
+        },
+        features: {
+          feature1: {
+            en: "Odds-to-probability conversion",
+            es: "Conversión de cuotas a probabilidades",
+          },
+          feature2: {
+            en: "Risk assessment algorithms",
+            es: "Algoritmos de evaluación de riesgos",
+          },
+          feature3: {
+            en: "Advanced GPT-4o language model insights",
+            es: "Análisis avanzados con el modelo de lenguaje GPT-4o",
+          },
+        },
+      },
+      step3: {
+        title: {
+          en: "3. Prediction & Insight Generation",
+          es: "3. Generación de Predicciones y Análisis",
+        },
+        description: {
+          en: "Our system calculates win probabilities for each team, determines the predicted winner, and assigns a risk level (Low, Medium, High) to each prediction. Detailed AI-generated insights provide context and explain the reasoning behind each prediction.",
+          es: "Nuestro sistema calcula las probabilidades de victoria para cada equipo, determina el ganador previsto y asigna un nivel de riesgo (Bajo, Medio, Alto) a cada predicción. Los análisis generados por IA proporcionan contexto y explican el razonamiento detrás de cada predicción.",
+        },
+        features: {
+          feature1: {
+            en: "Team win probabilities",
+            es: "Probabilidades de victoria del equipo",
+          },
+          feature2: {
+            en: "Risk level assessment",
+            es: "Evaluación del nivel de riesgo",
+          },
+          feature3: {
+            en: "Detailed game analysis and insights",
+            es: "Análisis detallado del juego e insights",
+          },
+        },
+      },
+    },
+    accuracy: {
+      title: {
+        en: "How Accurate Are Our Predictions?",
+        es: "¿Qué Tan Precisas Son Nuestras Predicciones?",
+      },
+      description: {
+        en: "Our AI prediction system has been trained on historical sports data and continuously learns from new outcomes. By analyzing odds from multiple bookmakers, we're able to identify value opportunities and generate highly accurate predictions.",
+        es: "Nuestro sistema de predicción de IA ha sido entrenado con datos deportivos históricos y aprende continuamente de nuevos resultados. Al analizar las cuotas de múltiples casas de apuestas, podemos identificar oportunidades de valor y generar predicciones altamente precisas.",
+      },
+      stats: {
+        high: {
+          value: {
+            en: "98%",
+            es: "98%",
+          },
+          label: {
+            en: "Accuracy for heavy favorites (90%+ probability)",
+            es: "Precisión para favoritos claros (90%+ probabilidad)",
+          },
+        },
+        medium: {
+          value: {
+            en: "85%",
+            es: "85%",
+          },
+          label: {
+            en: "Accuracy for medium probability predictions (60-90%)",
+            es: "Precisión para predicciones de probabilidad media (60-90%)",
+          },
+        },
+        low: {
+          value: {
+            en: "65%",
+            es: "65%",
+          },
+          label: {
+            en: "Accuracy for close matchups (50-60% probability)",
+            es: "Precisión para enfrentamientos cerrados (50-60% probabilidad)",
+          },
+        },
+      },
+    },
+    cta: {
+      title: {
+        en: "Ready to experience our AI predictions?",
+        es: "¿Listo para experimentar nuestras predicciones de IA?",
+      },
+      description: {
+        en: "Check out our latest predictions for upcoming games across MLB, NBA, and NHL. Our system is updated every 5 minutes with the latest odds and data.",
+        es: "Consulta nuestras últimas predicciones para los próximos juegos en MLB, NBA y NHL. Nuestro sistema se actualiza cada 5 minutos con las últimas cuotas y datos.",
+      },
+      button: {
+        en: "See Today's Predictions",
+        es: "Ver Predicciones de Hoy",
+      },
+    },
+    uiElements: {
+      oddsApi: {
+        title: {
+          en: "Odds API",
+          es: "API de Cuotas",
+        },
+        subtitle: {
+          en: "Real-time data feed",
+          es: "Fuente de datos en tiempo real",
+        },
+      },
+      sportsData: {
+        title: {
+          en: "Sports Data",
+          es: "Datos Deportivos",
+        },
+        subtitle: {
+          en: "Performance metrics",
+          es: "Métricas de rendimiento",
+        },
+      },
+      multipleSource: {
+        en: "Multiple Sources",
+        es: "Múltiples Fuentes",
+      },
+      aiPipeline: {
+        title: {
+          en: "AI Processing Pipeline",
+          es: "Proceso de IA",
+        },
+        powered: {
+          en: "GPT-4o Powered",
+          es: "Impulsado por GPT-4o",
+        },
+      },
+      dataIngestion: {
+        en: "Data Ingestion",
+        es: "Ingesta de Datos",
+      },
+      analysis: {
+        en: "Analysis",
+        es: "Análisis",
+      },
+      prediction: {
+        en: "Prediction",
+        es: "Predicción",
+      },
+      predictionCard: {
+        title: {
+          en: "NYM vs HOU Prediction",
+          es: "Predicción NYM vs HOU",
+        },
+        risk: {
+          en: "Low Risk",
+          es: "Riesgo Bajo",
+        },
+        description: {
+          en: "NYM is heavily favored to win this matchup against HOU with a 92% win probability. The odds strongly suggest NYM has significant advantages in this matchup, likely due to superior recent performance.",
+          es: "NYM es ampliamente favorito para ganar este enfrentamiento contra HOU con una probabilidad de victoria del 92%. Las cuotas sugieren que NYM tiene ventajas significativas, probablemente debido a un rendimiento superior reciente.",
+        },
+      },
+    },
+  },
+
+  // Breadcrumbs
+  breadcrumbs: {
+    home: {
+      en: "Home",
+      es: "Inicio",
+    },
+  },
+
+  pricing: {
+    title: {
+      en: "Pricing Plans",
+      es: "Planes de Precios",
+    },
+    subtitle: {
+      en: "Choose the plan that fits your betting needs",
+      es: "Elige el plan que se adapte a tus necesidades de apuestas",
+    },
+
+    baseballPlan: {
+      title: {
+        en: "Baseball",
+        es: "Béisbol",
+      },
+      description: {
+        en: "Get point and risk predictions for US professional baseball.",
+        es: "Obtén predicciones de puntos y riesgo para béisbol profesional de EE.UU.",
+      },
+      price: {
+        en: "$20",
+        es: "$20",
+      },
+      originalPrice: {
+        en: "$30",
+        es: "$30",
+      },
+      perMonth: {
+        en: "/month USD",
+        es: "/mes USD",
+      },
+      button: {
+        en: "Get Started",
+        es: "Comenzar",
+      },
+    },
+
+    basketballPlan: {
+      title: {
+        en: "Basketball",
+        es: "Baloncesto EE.UU.",
+      },
+      description: {
+        en: "Get point and risk predictions for US professional basketball.",
+        es: "Obtén predicciones de puntos y riesgo para baloncesto profesional de EE.UU.",
+      },
+      price: {
+        en: "$15",
+        es: "$15",
+      },
+      originalPrice: {
+        en: "$50",
+        es: "$50",
+      },
+      perMonth: {
+        en: "/month USD",
+        es: "/mes USD",
+      },
+      button: {
+        en: "Get Started",
+        es: "Comenzar",
+      },
+    },
+
+    hockeyPlan: {
+      title: {
+        en: "Hockey",
+        es: "Hockey EE.UU.",
+      },
+      description: {
+        en: "Get point and risk predictions for US professional hockey.",
+        es: "Obtén predicciones de puntos y riesgo para hockey profesional de EE.UU.",
+      },
+      price: {
+        en: "$15",
+        es: "$15",
+      },
+      originalPrice: {
+        en: "$50",
+        es: "$50",
+      },
+      perMonth: {
+        en: "/month USD",
+        es: "/mes USD",
+      },
+      button: {
+        en: "Get Started",
+        es: "Comenzar",
+      },
+    },
+
+    bundlePlan: {
+      title: {
+        en: "All Sports Bundle",
+        es: "Paquete de Todos los Deportes",
+      },
+      description: {
+        en: "Get access to all sports predictions at a discounted price",
+        es: "Obtén acceso a todas las predicciones deportivas a un precio con descuento",
+      },
+      price: {
+        en: "$45",
+        es: "$45",
+      },
+      originalPrice: {
+        en: "$95",
+        es: "$95",
+      },
+      perMonth: {
+        en: "/month USD",
+        es: "/mes USD",
+      },
+      button: {
+        en: "Subscribe to Bundle",
+        es: "Suscribirse al Paquete",
+      },
+
+      includes: {
+        baseball: {
+          en: "All Baseball predictions and insights included",
+          es: "Todas las predicciones e información de Béisbol incluidas",
+        },
+        basketball: {
+          en: "All Basketball predictions and insights included",
+          es: "Todas las predicciones e información de Baloncesto incluidas",
+        },
+        hockey: {
+          en: "All Hockey predictions and insights included",
+          es: "Todas las predicciones e información de Hockey incluidas",
+        },
+      },
+    },
+
+    features: {
+      matchPoints: {
+        en: "Match points prediction",
+        es: "Predicción de puntos del partido",
+      },
+      overUnder: {
+        en: "Over/under prediction per match",
+        es: "Predicción sobre/bajo por partido",
+      },
+      winningTeam: {
+        en: "Winning team risk prediction",
+        es: "Predicción de riesgo del equipo ganador",
+      },
+      aiInsights: {
+        en: "AI-based analysis and insights",
+        es: "Análisis e información basados en IA",
+      },
+      quarterlyAnalysis: {
+        en: "Quarterly performance analysis",
+        es: "Análisis de rendimiento por cuartos",
+      },
+      periodBreakdown: {
+        en: "Period-by-period breakdown",
+        es: "Desglose período por período",
+      },
+    },
+
+    faq: {
+      title: {
+        en: "Frequently Asked Questions",
+        es: "Preguntas Frecuentes",
+      },
+      switchPlans: {
+        question: {
+          en: "Can I switch plans at any time?",
+          es: "¿Puedo cambiar de plan en cualquier momento?",
+        },
+        answer: {
+          en: "Yes, you can easily switch between different sports plans or upgrade to the All Sports Bundle at any time.",
+          es: "Sí, puedes cambiar fácilmente entre diferentes planes deportivos o actualizar al Paquete de Todos los Deportes en cualquier momento.",
+        },
+      },
+      accuracy: {
+        question: {
+          en: "How accurate are the predictions?",
+          es: "¿Qué tan precisas son las predicciones?",
+        },
+        answer: {
+          en: "Our AI-powered system achieves an average accuracy of 68% across all sports, with specific sports varying between 65-72% accuracy.",
+          es: "Nuestro sistema impulsado por IA logra una precisión promedio del 68% en todos los deportes, con deportes específicos que varían entre 65-72% de precisión.",
+        },
+      },
+      freeTrial: {
+        question: {
+          en: "Is there a free trial available?",
+          es: "¿Hay una prueba gratuita disponible?",
+        },
+        answer: {
+          en: "We offer a 7-day free trial for new users to test our prediction system before committing to a subscription.",
+          es: "Ofrecemos una prueba gratuita de 7 días para nuevos usuarios para probar nuestro sistema de predicción antes de comprometerse con una suscripción.",
+        },
+      },
+      updates: {
+        question: {
+          en: "How often are predictions updated?",
+          es: "¿Con qué frecuencia se actualizan las predicciones?",
+        },
+        answer: {
+          en: "Predictions are updated multiple times daily as new data becomes available, with final predictions typically available 3-4 hours before game time.",
+          es: "Las predicciones se actualizan varias veces al día a medida que hay nuevos datos disponibles, con predicciones finales normalmente disponibles 3-4 horas antes del inicio del partido.",
+        },
+      },
+    },
+
+    cta: {
+      title: {
+        en: "Ready to improve your betting strategy?",
+        es: "¿Listo para mejorar tu estrategia de apuestas?",
+      },
+      description: {
+        en: "Join thousands of smart bettors using our AI-powered predictions to make informed decisions.",
+        es: "Únete a miles de apostadores inteligentes que utilizan nuestras predicciones impulsadas por IA para tomar decisiones informadas.",
+      },
+      button: {
+        en: "View Sample Predictions",
+        es: "Ver Predicciones de Muestra",
+      },
+    },
+
+    labels: {
+      popular: {
+        en: "POPULAR",
+        es: "POPULAR",
+      },
+      bestValue: {
+        en: "BEST VALUE",
+        es: "MEJOR VALOR",
+      },
+    },
+  },
+
+  // FAQ Page
+  faqPage: {
+    title: {
+      en: "Frequently Asked Questions",
+      es: "Preguntas Frecuentes",
+    },
+    subtitle: {
+      en: "Find answers to common questions about our sports prediction platform",
+      es: "Encuentra respuestas a preguntas comunes sobre nuestra plataforma de predicción deportiva",
+    },
+    questions: {
+      howWorks: {
+        question: {
+          en: "How does the prediction system work?",
+          es: "¿Cómo funciona el sistema de predicción?",
+        },
+        answer: {
+          en: "Our prediction system combines real-time odds data from various bookmakers with advanced AI analysis. We use machine learning algorithms trained on historical sports data to identify patterns and generate win probabilities for upcoming matches.",
+          es: "Nuestro sistema de predicción combina datos de cuotas en tiempo real de varias casas de apuestas con análisis avanzado de IA. Utilizamos algoritmos de aprendizaje automático entrenados con datos deportivos históricos para identificar patrones y generar probabilidades de victoria para próximos partidos.",
+        },
+      },
+      supportedSports: {
+        question: {
+          en: "What sports do you currently support?",
+          es: "¿Qué deportes soportan actualmente?",
+        },
+        answer: {
+          en: "We currently provide predictions for American Football (NFL), Basketball (NBA), and Hockey (NHL). We're constantly working to expand our coverage to include additional sports and leagues.",
+          es: "Actualmente ofrecemos predicciones para Fútbol Americano (NFL), Baloncesto (NBA) y Hockey (NHL). Estamos trabajando constantemente para ampliar nuestra cobertura e incluir deportes y ligas adicionales.",
+        },
+      },
+      accuracy: {
+        question: {
+          en: "How accurate are your predictions?",
+          es: "¿Qué tan precisas son sus predicciones?",
+        },
+        answer: {
+          en: "Our prediction system achieves an average accuracy of 68% across all sports, with specific sports varying between 65-72% accuracy. Predictions with higher confidence levels (labeled as 'Low Risk') tend to be more accurate than those with lower confidence.",
+          es: "Nuestro sistema de predicción logra una precisión promedio del 68% en todos los deportes, con deportes específicos que varían entre 65-72% de precisión. Las predicciones con niveles de confianza más altos (etiquetadas como 'Riesgo Bajo') tienden a ser más precisas que aquellas con menor confianza.",
+        },
+      },
+      updates: {
+        question: {
+          en: "How often are predictions updated?",
+          es: "¿Con qué frecuencia se actualizan las predicciones?",
+        },
+        answer: {
+          en: "Our system automatically refreshes odds data every 5 minutes and recalculates predictions as new information becomes available. Final predictions are typically available 3-4 hours before game time, but can be updated closer to the start if significant changes occur.",
+          es: "Nuestro sistema actualiza automáticamente los datos de cuotas cada 5 minutos y recalcula las predicciones a medida que hay nueva información disponible. Las predicciones finales suelen estar disponibles 3-4 horas antes del inicio del partido, pero pueden actualizarse más cerca del comienzo si se producen cambios significativos.",
+        },
+      },
+      freeTrial: {
+        question: {
+          en: "Do you offer a free trial?",
+          es: "¿Ofrecen una prueba gratuita?",
+        },
+        answer: {
+          en: "Yes, we offer a 7-day free trial for new users to test our prediction system before committing to a subscription. The free trial includes access to all sports and features.",
+          es: "Sí, ofrecemos una prueba gratuita de 7 días para nuevos usuarios para probar nuestro sistema de predicción antes de comprometerse con una suscripción. La prueba gratuita incluye acceso a todos los deportes y funciones.",
+        },
+      },
+      cancelSubscription: {
+        question: {
+          en: "Can I cancel my subscription at any time?",
+          es: "¿Puedo cancelar mi suscripción en cualquier momento?",
+        },
+        answer: {
+          en: "Yes, you can cancel your subscription at any time from your account settings. Once canceled, you'll continue to have access until the end of your current billing period.",
+          es: "Sí, puedes cancelar tu suscripción en cualquier momento desde la configuración de tu cuenta. Una vez cancelada, seguirás teniendo acceso hasta el final de tu período de facturación actual.",
+        },
+      },
+      payment: {
+        question: {
+          en: "What payment methods do you accept?",
+          es: "¿Qué métodos de pago aceptan?",
+        },
+        answer: {
+          en: "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and Apple Pay. All payments are securely processed and your payment information is never stored on our servers.",
+          es: "Aceptamos todas las principales tarjetas de crédito (Visa, MasterCard, American Express), PayPal y Apple Pay. Todos los pagos se procesan de forma segura y su información de pago nunca se almacena en nuestros servidores.",
+        },
+      },
+      support: {
+        question: {
+          en: "How can I contact customer support?",
+          es: "¿Cómo puedo contactar al servicio de atención al cliente?",
+        },
+        answer: {
+          en: "You can reach our customer support team by email at support@betseguro.com or through the live chat feature on our website. Our support hours are Monday to Friday, 9am to 5pm EST.",
+          es: "Puedes contactar a nuestro equipo de atención al cliente por correo electrónico a support@betseguro.com o a través de la función de chat en vivo en nuestro sitio web. Nuestro horario de atención es de lunes a viernes, de 9am a 5pm EST.",
+        },
+      },
+    },
+    contactSupport: {
+      title: {
+        en: "Didn't find what you're looking for?",
+        es: "¿No encontraste lo que buscabas?",
+      },
+      description: {
+        en: "Contact our support team and we'll get back to you as soon as possible.",
+        es: "Contacta a nuestro equipo de soporte y te responderemos lo antes posible.",
+      },
+      button: {
+        en: "Contact Support",
+        es: "Contactar Soporte",
       },
     },
   },

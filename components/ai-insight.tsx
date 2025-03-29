@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { generateAiInsight } from "@/app/actions";
+import { generateClientAiInsight } from "@/lib/client-api";
 import type { Game } from "@/lib/odds-api";
 import { Sparkles, AlertCircle, RotateCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,7 @@ export default function AiInsight({ game }: { game: Game }) {
     async function loadInsight() {
       try {
         setLoading(true);
-        const data = await generateAiInsight(game);
+        const data = await generateClientAiInsight(game);
         setInsight(data);
         setError(null);
       } catch (err) {
