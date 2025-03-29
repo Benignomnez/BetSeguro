@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "installCommand": "npm install",
+  "buildCommand": "pnpm run build",
+  "installCommand": "pnpm install",
   "framework": "nextjs",
   "env": {
     "NEXT_PUBLIC_API_BASE_URL": "https://api.the-odds-api.com/v4"
