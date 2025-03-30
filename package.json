@@ -27,7 +27,8 @@
   "packageManager": "pnpm@8.15.3",
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/prebuild.js && next build",
+    "prebuild": "node scripts/fix-dependencies.js && node scripts/prebuild.js",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -64,7 +65,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
-    "date-fns": "^3.3.1",
+    "date-fns": "2.30.0",
     "embla-carousel-react": "8.5.1",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
